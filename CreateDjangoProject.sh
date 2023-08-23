@@ -1,7 +1,12 @@
 #!/bin/bash
 
-#V1.0.0
+# V1.0.1
+# TODO: Add a check to make sure that the user has all dependent programs to run
+# the script. If the user does not have the required dependent programs, offer to
+# have the script install them, or update them.
+
 # Function to check if a command is available.
+
 command_exists() {
   command -v \$1 >/dev/null 2>$1
 }
@@ -72,8 +77,8 @@ django-admin startproject $ProjectName
 cd ./$ProjectName/$ProjectName
 
 clear && echo "Creating folder structure..."
-echo " Making   file: requirements.txt" && touch requirements.txt
-echo " Making folder: apps" && mkdir ./apps
+echo " Making   file: requirements.txt" && touch requirements.txt  #  TODO: Add requirments to file auto-magicaly.
+echo " Making folder: apps" && mkdir ./apps # TODO: Add base files to folders? --V
 echo " Making folder: static " && mkdir ./static
 echo " Making folder: media" && mkdir ./media
 echo " Making folder: tempalates" && mkdir ./templates
